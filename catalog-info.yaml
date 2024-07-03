@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sample-spring-boot-app-openshift2
+  title: sample-spring-boot-app-openshift2
+  annotations:
+    janus-idp.io/tekton: sample-spring-boot-app-openshift2
+    tektonci/build-namespace: demo
+    github.com/project-slug: piomin/sample-spring-boot-app-openshift2
+    sonarqube.org/project-key: piomin_sample-spring-boot-app-openshift2
+    backstage.io/kubernetes-id: sample-spring-boot-app-openshift2
+    argocd/app-name: sample-spring-boot-app-openshift2
+    prometheus.io/rule: container_memory_usage_bytes{pod=~"sample-spring-boot-app-openshift2-.*"}|pod,rate(container_cpu_usage_seconds_total{pod=~"sample-spring-boot-app-openshift2-.*"}[5m])|pod
+  tags:
+    - spring-boot
+    - java
+    - maven
+    - tekton
+    - argocd
+    - renovate
+    - sonarqube
+spec:
+  type: service
+  owner: piotr.minkowski@gmail.com
+  lifecycle: experimental
